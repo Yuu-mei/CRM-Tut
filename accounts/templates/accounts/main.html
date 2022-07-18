@@ -1,0 +1,31 @@
+<!--This allows you to load static files like CSS, JS and IMGs-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css'%}">
+</head>
+<body>
+    <!--You can also include certain htmls that you want to reuse and change the content-->
+    {% include 'accounts/navbar.html' %}
+
+    <div class="container-fluid">
+        <!--Block tags to know where it has to put the contet-->
+        {% block content %}
+        <!--It will render the content here-->
+        {% endblock %}
+    </div>
+
+    <hr>
+    <h5>Our footer</h5>
+
+<!--Bootstrap JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
